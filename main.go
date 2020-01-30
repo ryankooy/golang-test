@@ -10,7 +10,7 @@ func main() {
 	fmt.Println("Go Dock Yourself")
 
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		fmt.Fprintf(w, "Hell")
+		fmt.Fprintf(w, "Hell World")
 	})
 
 	log.Fatal(http.ListenAndServe(":8081", nil))
