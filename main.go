@@ -55,7 +55,7 @@ func makeGrid(n, m int) {
 
 func displayGrid(isEndOfGame bool) {
 	if !isEndOfGame {
-		fmt.Println("Grid has", mineCount, "mine(s),", minesMarked, "mine(s) marked.")
+		fmt.Println("Grid has", mineCount, "mine(s),", minesMarked, "mine(s) marked.\n")
 	}
 	margin := strings.Repeat(" ", lMargin)
 	fmt.Print(margin, " ")
@@ -63,9 +63,9 @@ func displayGrid(isEndOfGame bool) {
 		fmt.Print(i)
 	}
 	fmt.Println()
-	fmt.Println(margin, strings.Repeat("-", len(grid)))
+	// fmt.Println(margin, strings.Repeat("-", len(grid)))
 	for y := 0; y < len(grid[0]); y++ {
-		fmt.Printf("%*d:", lMargin, y+1)
+		fmt.Printf("%*d ", lMargin, y+1)
 		for x := 0; x < len(grid); x++ {
 			fmt.Printf("%c", grid[x][y].display)
 		}
@@ -109,6 +109,7 @@ func resign() {
 }
 
 func usage() {
+	fmt.Println("\nMINESWEEPIES\n")
 	fmt.Println("h or ? - this help,")
 	fmt.Println("c x y  - clear cell (x, y),")
 	fmt.Println("m x y  - marks cell (x, y),")
