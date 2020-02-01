@@ -55,7 +55,7 @@ func makeGrid(n, m int) {
 
 func displayGrid(isEndOfGame bool) {
 	if !isEndOfGame {
-		fmt.Println("Grid has", mineCount, "mine(s),", minesMarked, "mine(s) marked.\n")
+		fmt.Println("Grid has", mineCount, "mine(s),", minesMarked, "mine(s) marked.")
 	}
 	margin := strings.Repeat(" ", lMargin)
 	fmt.Print(margin, " ")
@@ -63,7 +63,6 @@ func displayGrid(isEndOfGame bool) {
 		fmt.Print(i)
 	}
 	fmt.Println()
-	// fmt.Println(margin, strings.Repeat("-", len(grid)))
 	for y := 0; y < len(grid[0]); y++ {
 		fmt.Printf("%*d ", lMargin, y+1)
 		for x := 0; x < len(grid); x++ {
@@ -109,13 +108,14 @@ func resign() {
 }
 
 func usage() {
-	fmt.Println("\nMINESWEEPIES\n")
+	fmt.Println("\nMINESWEEPIES")
 	fmt.Println("h or ? - this help,")
 	fmt.Println("c x y  - clear cell (x, y),")
 	fmt.Println("m x y  - marks cell (x, y),")
-	fmt.Println("n     	- start a new game,")
+	fmt.Println("n		- start a new game,")
 	fmt.Println("q      - quit/resign the game,")
-	fmt.Println("where x is the horizontal column number and y is the vertical row number.\n")
+	fmt.Println("where x is the horizontal column number and y is the vertical row number.")
+	fmt.Println()
 }
 
 func markCell(x, y int) {
